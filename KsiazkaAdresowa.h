@@ -11,7 +11,11 @@ class KsiazkaAdresowa
     int idUsunietegoAdresata;
 
     vector <Uzytkownik> uzytkownicy;
+    int pobierzIdNowegoUzytkownika();
+    bool czyIstniejeLogin(string login);
+    Uzytkownik podajDaneNowegoUzytkownika();
 
 public:
     void rejestracjaUzytkownika();
+    void wypiszWszystkichUzytkownikow();
 };
