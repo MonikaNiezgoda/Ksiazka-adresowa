@@ -7,21 +7,21 @@
 
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
-#include "UzytkownikMenedzer.h"
+//#include "UzytkownikMenedzer.h"
+//#include "KsiazkaAdresowa.h"
 
 using namespace std;
 
 class PlikZUzytkownikami
 {
-    string nazwaPlikuZUzytkownikami;
-    fstream plikTekstowy;
+    const string nazwaPlikuZUzytkownikami;
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
     bool czyPlikJestPusty();
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
  public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    PlikZUzytkownikami();
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami("Uzytkownicy.txt") {};
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
 };
