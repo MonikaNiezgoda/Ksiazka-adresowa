@@ -69,4 +69,10 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
+void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
+{
+    PlikZUzytkownikami plikZUzytkownikami;
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
+
 
