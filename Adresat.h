@@ -6,19 +6,27 @@ using namespace std;
 
 class Adresat
 {
-    int id, int idUzytkownika;
-    string login;
-    string haslo;
-    string numerTelefonu, string email, string adres;
+    int id; int idUzytkownika;
+    string imie;
+    string nazwisko;
+    string numerTelefonu; string email; string adres;
 
-/*public:
+public:
     void ustawId(int noweId);
-    void ustawLogin(string nowyLogin);
-    void ustawHaslo(string noweHaslo);
+    void ustawIdUzytkownika(int noweIdUzytkownika);
+    void ustawImie(string noweImie);
+    void ustawNazwisko(string noweNazwisko);
+    void ustawNumerTelefonu(string nowyNumerTelefonu);
+    void ustawEmail(string nowyEmail);
+    void ustawAdres(string nowyAdres);
 
     int pobierzId();
-    string pobierzLogin();
-    string pobierzHaslo();*/
+    int pobierzIdUzytkownika();
+    string pobierzImie();
+    string pobierzNazwisko();
+    string pobierzNumerTelefonu();
+    string pobierzEmail();
+    string pobierzAdres();
 };
 
 #endif
