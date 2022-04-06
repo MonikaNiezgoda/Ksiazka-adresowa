@@ -7,8 +7,6 @@
 
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
-//#include "UzytkownikMenedzer.h"
-//#include "KsiazkaAdresowa.h"
 
 using namespace std;
 

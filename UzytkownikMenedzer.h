@@ -18,12 +18,14 @@ class UzytkownikMenedzer
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     Uzytkownik podajDaneNowegoUzytkownika();
+    string wczytajLinie();
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    int logowanieUzytkownika();
 };
 
 #endif
