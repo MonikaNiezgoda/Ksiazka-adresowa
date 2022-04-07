@@ -1,5 +1,6 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
@@ -13,6 +14,8 @@ int main()
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();*/
 
     //ksiazkaAdresowa.logowanieUzytkownika();
+    AdresatMenedzer adresatMenedzer("Adresaci.txt");
+    adresatMenedzer.dodajAdresata(1,1);
 
 
 

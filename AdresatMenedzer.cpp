@@ -1,5 +1,19 @@
 #include "AdresatMenedzer.h"
 
+int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    Adresat adresat;
+
+    system("cls");
+    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+
+    adresaci.push_back(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+
+    return ++idOstatniegoAdresata;
+}
+
 Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
     Adresat adresat;

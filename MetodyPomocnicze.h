@@ -5,7 +5,8 @@
 #include <algorithm>
 
 #include "PlikZUzytkownikami.h"
-#include "AdresatMenedzer.h"
+
+
 
 using namespace std;
 

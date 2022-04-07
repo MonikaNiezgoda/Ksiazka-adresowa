@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include <vector>
-#include "UzytkownikMenedzer.h"
 #include <fstream>
 #include <windows.h>
 #include <sstream>
+
+#include "UzytkownikMenedzer.h"
+#include "AdresatMenedzer.h"
 
 
 using namespace std;
@@ -15,6 +17,7 @@ class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
 
+
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami){
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();};
@@ -22,6 +25,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+
 };
 
 #endif // KSIAZKAADRESOWA_H
