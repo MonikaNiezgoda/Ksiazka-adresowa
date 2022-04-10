@@ -16,6 +16,7 @@ class MetodyPomocnicze
 public:
     static string konwerjsaIntNaString(int liczba);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    int konwersjaStringNaInt(string liczba);
 };
 
 #endif
