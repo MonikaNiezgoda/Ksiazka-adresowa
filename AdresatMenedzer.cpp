@@ -52,6 +52,7 @@ string AdresatMenedzer::wczytajLinie()
 }
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
+
 {
     system("cls");
     if (!adresaci.empty())
