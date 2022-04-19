@@ -25,7 +25,7 @@ public:
     void ustawId(int noweId);
     void dopiszAdresataDoPliku(Adresat adresat);
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami("Adresaci.txt") {};
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
 
 };
 

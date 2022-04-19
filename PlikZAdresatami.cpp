@@ -17,7 +17,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         }
         else
         {
-            plikTekstowy  << liniaZDanymiAdresata <<endl;
+            plikTekstowy <<endl << liniaZDanymiAdresata;
         }
     }
     else
@@ -53,7 +53,7 @@ bool PlikZAdresatami::czyPlikJestPusty()
         return false;
 }
 
-void PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika)
+int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 
@@ -82,12 +82,11 @@ void PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adre
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-        idOstatniegoAdresata = idOstatniegoAdresata++;
-        system("pause");
+        return idOstatniegoAdresata;
     }
-
     else
-        exit(0);
+        return 0;
+
 }
 
 int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)

@@ -23,12 +23,19 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 
 void KsiazkaAdresowa::dodajAdresata()
 {
-   adresatMenedzer.dodajAdresata(adresatMenedzer.adresaci,idZalogowanegoUzytkownika);
+   adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
 }
-
-
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatMenedzer.wyswietlWszystkichAdresatow();
+    adresatMenedzer.wyswietlWszystkichAdresatow(idZalogowanegoUzytkownika);
+}
+void KsiazkaAdresowa::ustawId(int noweId)
+{
+    if (noweId >= 0)
+    idZalogowanegoUzytkownika = noweId;
+}
+int KsiazkaAdresowa::pobierzId()
+{
+    return idZalogowanegoUzytkownika;
 }

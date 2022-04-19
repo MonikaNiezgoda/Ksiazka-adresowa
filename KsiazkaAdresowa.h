@@ -29,7 +29,8 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
-
+    void ustawId(int noweId);
+    int pobierzId();
 };
 
 #endif // KSIAZKAADRESOWA_H

@@ -1,7 +1,7 @@
 #include "AdresatMenedzer.h"
 
 
-int AdresatMenedzer::dodajAdresata(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika)
+void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
@@ -9,24 +9,16 @@ int AdresatMenedzer::dodajAdresata(vector <Adresat> &adresaci, int idZalogowaneg
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    //plikZAdresatami.ustawId(idOstatniegoAdresata++);
 }
 
 Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     MetodyPomocnicze metodyPomocnicze;
+    idOstatniegoAdresata=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
 
-    if((adresaci.empty() == true))
-      plikZAdresatami.ustawId(1);
-    else
-    {
-        int idAdresat=adresat.pobierzId();
-        plikZAdresatami.ustawId(idAdresat++);
-    }
+    idOstatniegoAdresata=idOstatniegoAdresata+1;
 
-
-    adresat.ustawId(plikZAdresatami.pobierzId());
+    adresat.ustawId(idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     string imie;
@@ -48,6 +40,8 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     cout << "Podaj adres: ";
     adresat.ustawAdres(wczytajLinie());
 
+    idOstatniegoAdresata++;
+
     return adresat;
 }
 
@@ -58,9 +52,9 @@ string AdresatMenedzer::wczytajLinie()
     return wejscie;
 }
 
-void AdresatMenedzer::wyswietlWszystkichAdresatow()
-
+void AdresatMenedzer::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
 {
+    idOstatniegoAdresata=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci,idZalogowanegoUzytkownika);
     system("cls");
     if (!adresaci.empty())
     {
@@ -88,9 +82,3 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
-
-void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
-{
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci,idZalogowanegoUzytkownika);
-}
-
