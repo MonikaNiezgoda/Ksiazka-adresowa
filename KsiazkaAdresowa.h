@@ -29,6 +29,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
+    void wylogowanieUzytkownika();
     void ustawId(int noweId);
     int pobierzId();
 };

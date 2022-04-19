@@ -5,8 +5,6 @@
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
 
-
-
 using namespace std;
 
 
@@ -28,6 +26,7 @@ public:
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    int wylogowanieUzytkownika(int idZalogowanegoUzytkownika);
 };
 
 #endif
