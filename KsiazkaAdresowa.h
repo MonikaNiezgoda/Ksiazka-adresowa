@@ -32,6 +32,7 @@ public:
     void wylogowanieUzytkownika();
     void ustawId(int noweId);
     int pobierzId();
+
 };
 
 #endif // KSIAZKAADRESOWA_H

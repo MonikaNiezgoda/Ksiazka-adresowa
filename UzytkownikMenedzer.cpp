@@ -99,6 +99,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
+
+
             return 0;
         }
     }
