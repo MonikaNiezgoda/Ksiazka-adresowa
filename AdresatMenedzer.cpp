@@ -91,3 +91,8 @@ void AdresatMenedzer::ustawIdOstatniegoAdresata()
         idOstatniegoAdresata=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
         plikZAdresatami.ustawId(idOstatniegoAdresata);
 }
+
+void AdresatMenedzer::wyczyscAdresatow()
+{
+    adresaci.clear();
+}

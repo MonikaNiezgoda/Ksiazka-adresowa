@@ -36,6 +36,8 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 void KsiazkaAdresowa::wylogowanieUzytkownika()
 {
    idZalogowanegoUzytkownika=uzytkownikMenedzer.wylogowanieUzytkownika(idZalogowanegoUzytkownika);
+   adresatMenedzer.wyczyscAdresatow();
+
 }
 
 void KsiazkaAdresowa::ustawId(int noweId)

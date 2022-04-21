@@ -25,6 +25,7 @@ public:
     AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
     void wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika);
     void ustawIdOstatniegoAdresata();
+    void wyczyscAdresatow();
 };
 
 #endif
