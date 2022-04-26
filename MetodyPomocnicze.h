@@ -17,6 +17,7 @@ public:
     static string konwerjsaIntNaString(int liczba);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     int konwersjaStringNaInt(string liczba);
+    char wczytajZnak();
 };
 
 #endif

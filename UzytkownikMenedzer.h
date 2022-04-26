@@ -21,13 +21,19 @@ class UzytkownikMenedzer
     string wczytajLinie();
 
 public:
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){
+    idZalogowanegoUzytkownika = 0;
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
-    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
-    int wylogowanieUzytkownika(int idZalogowanegoUzytkownika);
+    void zmianaHaslaZalogowanegoUzytkownika();
+    int wylogowanieUzytkownika();
+    void ustawIdZalogowanegoUzytkownika (int noweId);
+    int pobierzIdZalogowanegoUzytkownika ();
+    bool czyUzytkownikJestZalogowany();
+    bool czyUzytkownikJestNiezalogowany();
 };
 
 #endif

@@ -8,6 +8,7 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
 
     cout<<endl<<"Konto zalozono pomyslnie"<<endl<<endl;
     system("pause");
+
 }
 
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika ()
@@ -68,11 +69,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     string login = "", haslo = "";
@@ -95,7 +91,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    idZalogowanegoUzytkownika=uzytkownicy[i].pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -117,7 +114,7 @@ string UzytkownikMenedzer::wczytajLinie()
     return wejscie;
 }
 
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
@@ -135,9 +132,34 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int UzytkownikMenedzer::wylogowanieUzytkownika(int idZalogowanegoUzytkownika)
+int UzytkownikMenedzer::wylogowanieUzytkownika()
 {
-    int idUzytkownika = 0;
-    return idUzytkownika;
+    idZalogowanegoUzytkownika = 0;
+}
+
+void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int noweId)
+{
+    idZalogowanegoUzytkownika=noweId;
+}
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestNiezalogowany()
+{
+    if(idZalogowanegoUzytkownika > 0)
+        return false;
+    else
+        return true;
 }
 
