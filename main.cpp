@@ -6,11 +6,11 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt", "Adresaci_tymczasowo.txt");
     char wybor;
     while (true)
     {
-        if (ksiazkaAdresowa.czyUzytkownikJestNiezalogowany())
+        if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
@@ -38,6 +38,19 @@ int main()
             {
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
+                break;
+
+                case '4':
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                break;
+                case '5':
+                ksiazkaAdresowa.usunAdresata();
+                break;
+                case '7':
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                break;
+                case '8':
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             }
         }
