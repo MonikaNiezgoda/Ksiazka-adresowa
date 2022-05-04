@@ -64,3 +64,5 @@ int MetodyPomocnicze::wczytajLiczbeCalkowita()
     }
     return liczba;
 }
+
+

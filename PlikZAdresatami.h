@@ -34,6 +34,8 @@ public:
     };
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunWybranaLinieWPliku(int idUsuwanegoAdresata);
+    void edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, int idEdytowanegoPliku);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
 
 };
 

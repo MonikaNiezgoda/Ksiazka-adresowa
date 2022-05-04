@@ -77,7 +77,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     cout << endl << "Podaj login: ";
     login = wczytajLinie();
 
-    //vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     for (int i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin() == login)
