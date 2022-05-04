@@ -165,6 +165,16 @@ void PlikZAdresatami::ustawIdOstatniegoAdresata(int noweId)
     idOstatniegoAdresata = noweId;
 }
 
+void PlikZAdresatami::ustawIdEdytowanegoAdresata(int noweId)
+{
+    idEdytowanegoAdresata = noweId;
+}
+
+int PlikZAdresatami::pobierzIdEdytowanegoAdresata()
+{
+    return idEdytowanegoAdresata;
+}
+
 void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
@@ -221,7 +231,7 @@ void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
     else
         cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
 }
-void PlikZAdresatami::edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, int idEdytowanegoAdresata)
+void PlikZAdresatami::edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
@@ -258,15 +268,14 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzie
     }
 }
 
-void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata)
+void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
     MetodyPomocnicze metodyPomocnicze;
     int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
-    //numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idEdytowanegoAdresata);
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-    edytujWybranaLinieWPliku(liniaZDanymiAdresata, idEdytowanegoAdresata);
+    edytujWybranaLinieWPliku(liniaZDanymiAdresata);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }

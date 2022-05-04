@@ -13,7 +13,6 @@ class AdresatMenedzer
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     int idOstatniegoAdresata;
     int idUsuwanegoAdresata;
-    int idEdytowanegoAdresata;
     Adresat adresat;
     vector <Adresat> adresaci;
     Adresat podajDaneNowegoAdresata();
@@ -37,7 +36,6 @@ public:
     void wyczyscAdresatow();
     void usunAdresata();
     void edytujAdresata();
-    int pobierzIdEdytowanegoAdresata();
 };
 
 #endif
