@@ -179,6 +179,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
+    string daneOstaniegoAdresataWPliku = "";
     int numerWczytanejLinii = 1;
     bool czyIstniejeAdresat = false;
 
@@ -192,19 +193,16 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
             // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
             // aby na koncu pliku nie bylo pustej linii
 
-            if(idUsuwanegoAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
-            {
-                czyIstniejeAdresat = true;
-            }
+            if(idUsuwanegoAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia)){}
             else
             {
-            if (numerWczytanejLinii == 1)
+            if (numerWczytanejLinii == 1 && pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != idUsuwanegoAdresata)
                 tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii == 2)
+            else if (numerWczytanejLinii == 2 && idUsuwanegoAdresata == 1)
                 tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii > 2)
+            else if (numerWczytanejLinii > 2 && idUsuwanegoAdresata == 1)
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
-            else if (numerWczytanejLinii > 1)
+            else if (numerWczytanejLinii > 1 && idUsuwanegoAdresata != 1)
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
             }
 
@@ -216,6 +214,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
         usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
         zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, NAZWA_PLIKU_Z_ADRESATAMI);
     }
+
 }
 
 void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem)

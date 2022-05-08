@@ -20,7 +20,6 @@ void AdresatMenedzer::dodajAdresata()
 Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
-    MetodyPomocnicze metodyPomocnicze;
 
     adresat.ustawId( (plikZAdresatami.pobierzIdOstatniegoAdresata()+1) );
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
@@ -92,10 +91,7 @@ void AdresatMenedzer::wyczyscAdresatow()
 
 void AdresatMenedzer::usunAdresata()
 {
-    MetodyPomocnicze metodyPomocnicze;
     idUsuwanegoAdresata = 0;
-    int numerLiniiUsuwanegoAdresata = 0;
-
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -113,10 +109,12 @@ void AdresatMenedzer::usunAdresata()
             znak = metodyPomocnicze.wczytajZnak();
             if (znak == 't')
             {
-                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
+                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
+                adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+                break;
             }
             else
             {
@@ -134,7 +132,6 @@ void AdresatMenedzer::usunAdresata()
 
 int AdresatMenedzer::podajIdWybranegoAdresata()
 {
-    MetodyPomocnicze metodyPomocnicze;
     int idWybranegoAdresata = 0;
     cout << "Podaj numer ID Adresata: ";
     idWybranegoAdresata  = metodyPomocnicze.wczytajLiczbeCalkowita();
@@ -144,9 +141,7 @@ int AdresatMenedzer::podajIdWybranegoAdresata()
 void AdresatMenedzer::edytujAdresata()
 {
     system("cls");
-    MetodyPomocnicze metodyPomocnicze;
     plikZAdresatami.ustawIdEdytowanegoAdresata(0);
-    int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -211,7 +206,6 @@ void AdresatMenedzer::edytujAdresata()
 
 char AdresatMenedzer::wybierzOpcjeZMenuEdycja()
 {
-    MetodyPomocnicze metodyPomocnicze;
     char wybor;
 
     cout << endl << "   >>> MENU  EDYCJA <<<" << endl;
@@ -233,7 +227,6 @@ void AdresatMenedzer::wyszukajAdresatowPoImieniu()
 {
     string imiePoszukiwanegoAdresata = "";
     int iloscAdresatow = 0;
-    MetodyPomocnicze metodyPomocnicze;
 
     system("cls");
     if (!adresaci.empty())
@@ -272,7 +265,6 @@ void AdresatMenedzer::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
 
 void  AdresatMenedzer::wyszukajAdresatowPoNazwisku()
 {
-    MetodyPomocnicze metodyPomocnicze;
     string nazwiskoPoszukiwanegoAdresata;
     int iloscAdresatow = 0;
 
@@ -302,5 +294,3 @@ void  AdresatMenedzer::wyszukajAdresatowPoNazwisku()
     cout << endl;
     system("pause");
 }
-
-
