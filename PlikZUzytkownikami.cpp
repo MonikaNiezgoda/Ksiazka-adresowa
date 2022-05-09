@@ -26,7 +26,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 }
 
 
-bool PlikZUzytkownikami::czyPlikJestPusty()
+/*bool PlikZUzytkownikami::czyPlikJestPusty()
 {
     fstream plikTekstowy;
     plikTekstowy.seekg(0, ios::end);
@@ -34,7 +34,7 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
         return true;
     else
         return false;
-}
+}*/
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
