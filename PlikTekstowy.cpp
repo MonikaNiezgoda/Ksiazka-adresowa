@@ -1,23 +1,12 @@
-#include <iostream>
-#include <fstream>
+#include "PlikTekstowy.h"
 
-using namespace std;
 
-class PlikTekstowy {
-
-    const string NAZWA_PLIKU;
-
-public:
-
-    PlikTekstowy(string nazwaPliku) : NAZWA_PLIKU(nazwaPliku) {
-    }
-
-    string pobierzNazwePliku()
+    string PlikTekstowy::pobierzNazwePliku()
     {
         return NAZWA_PLIKU;
     }
 
-    bool czyPlikJestPusty()
+    bool PlikTekstowy::czyPlikJestPusty()
     {
         bool pusty = true;
         fstream plikTekstowy;
