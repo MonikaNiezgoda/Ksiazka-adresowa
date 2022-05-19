@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt", "Adresaci_tymczasowo.txt");
-    PlikTekstowy plikTekstowy("Uzytkownicy.txt");
+    //PlikTekstowy plikTekstowy("Uzytkownicy.txt");
     char wybor;
     while (true)
     {

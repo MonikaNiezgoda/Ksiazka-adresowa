@@ -22,4 +22,3 @@
         plikTekstowy.close();
         return pusty;
     }
-};

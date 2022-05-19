@@ -17,7 +17,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
         else
         {
-            plikTekstowy << liniaZDanymiUzytkownika<<endl ;
+            plikTekstowy << endl<< liniaZDanymiUzytkownika;
         }
     }
     else
